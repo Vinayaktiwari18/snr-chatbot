@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: snr-chatbot
+    env: static
+    buildCommand: ""
+    startCommand: ""
+    outputPath: .

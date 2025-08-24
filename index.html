@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNR - Advanced AI Chatbot</title>
+    <meta name="description" content="SNR AI Chatbot with voice recognition and real-time messaging">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <!-- App container -->
+    <div class="app-container">
+        <!-- Loading screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-content">
+                <div class="logo-animation">
+                    <div class="logo-pulse"></div>
+                    <img src="src/images/logo.png" alt="SNR AI Logo" class="app-logo">
+                </div>
+                <h1>SNR AI</h1>
+                <p>Loading intelligent assistant...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main app content (initially hidden) -->
+        <div class="main-app" id="mainApp" style="display: none;">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar content from previous implementation -->
+            </div>
+
+            <!-- Main content -->
+            <div class="main-content">
+                <!-- Chat interface from previous implementation -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log('Service Worker Registered'))
+                .catch(err => console.log('Service Worker Registration Failed:', err));
+        }
+    </script>
+
+    <script src="src/js/app.js"></script>
+    <script src="src/js/voice-recognition.js"></script>
+    <script src="src/js/chat-handler.js"></script>
+</body>
+</html>

@@ -1,15 +1,13 @@
 {
   "name": "snr-chatbot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Advanced AI Chatbot",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo 'No build process needed for static site'",
+    "start": "echo 'Static site - no server needed'"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "live-server": "^1.2.2"
-  }
+  "keywords": ["chatbot", "ai", "voice"],
+  "author": "Vinayak Tiwari",
+  "license": "MIT"
 }

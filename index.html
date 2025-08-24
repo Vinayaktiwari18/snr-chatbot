@@ -4,54 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SNR - Advanced AI Chatbot</title>
-    <meta name="description" content="SNR AI Chatbot with voice recognition and real-time messaging">
-    <link rel="stylesheet" href="src/css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- App container -->
-    <div class="app-container">
-        <!-- Loading screen -->
-        <div class="loading-screen" id="loadingScreen">
-            <div class="loading-content">
-                <div class="logo-animation">
-                    <div class="logo-pulse"></div>
-                    <img src="src/images/logo.png" alt="SNR AI Logo" class="app-logo">
-                </div>
-                <h1>SNR AI</h1>
-                <p>Loading intelligent assistant...</p>
-                <div class="progress-bar">
-                    <div class="progress-fill"></div>
-                </div>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="snr-logo">
+                <img src="https://placehold.co/120x120/667eea/ffffff?text=SNR" alt="SNR AI Chatbot logo" class="logo-image">
             </div>
-        </div>
-
-        <!-- Main app content (initially hidden) -->
-        <div class="main-app" id="mainApp" style="display: none;">
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar content from previous implementation -->
-            </div>
-
-            <!-- Main content -->
-            <div class="main-content">
-                <!-- Chat interface from previous implementation -->
+            <h1 class="loading-title">SNR AI</h1>
+            <p class="loading-subtitle">Initializing Intelligence</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
             </div>
         </div>
     </div>
 
-    <!-- Service Worker Registration -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(() => console.log('Service Worker Registered'))
-                .catch(err => console.log('Service Worker Registration Failed:', err));
-        }
-    </script>
+    <div class="chat-container" id="chatContainer">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://placehold.co/80x80/667eea/ffffff?text=SNR" alt="SNR Logo" class="sidebar-logo">
+                <h2>SNR AI</h2>
+                <p>Your Intelligent Assistant</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Powered</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-microphone"></i>
+                    <span>Voice Control</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <span>Fast & Responsive</span>
+                </div>
+            </div>
+        </div>
 
-    <script src="src/js/app.js"></script>
-    <script src="src/js/voice-recognition.js"></script>
-    <script src="src/js/chat-handler.js"></script>
+        <div class="main-content">
+            <div class="chat-header">
+                <div class="header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h3>SNR Assistant</h3>
+                        <p>Online - Ready to help</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-icon"><i class="fas fa-cog"></i></button>
+                    <button class="btn-icon"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>✨ Welcome to SNR AI! I'm your advanced AI assistant. How can I help you today?</p>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <div class="input-container">
+                    <button class="btn-attachment"><i class="fas fa-paperclip"></i></button>
+                    <input type="text" placeholder="Type your message or use voice..." id="messageInput">
+                    <button class="btn-voice" id="voiceBtn"><i class="fas fa-microphone"></i></button>
+                    <button class="btn-send"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

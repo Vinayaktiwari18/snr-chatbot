@@ -4,4 +4,8 @@ services:
     env: static
     buildCommand: ""
     startCommand: ""
-    outputPath: .
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
